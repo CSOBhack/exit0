@@ -12,7 +12,7 @@ import cz.csob.chart.DonutChart;
 import cz.csob.gmap.GoogleMapCmp;
 import cz.csob.rest.AllJsonServices;
 import cz.csob.rest.ForecastDisplay;
-import cz.csob.rest.apimodel.ActionsResponse;
+import cz.csob.rest.apimodel.actions.ActionsResponse;
 import org.vaadin.maddon.label.Header;
 import org.vaadin.maddon.layouts.MVerticalLayout;
 
