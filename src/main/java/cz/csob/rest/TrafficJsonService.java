@@ -24,17 +24,16 @@ public class TrafficJsonService {
         client = ClientBuilder.newClient(cc);
         //example query params: ?q=Turku&cnt=10&mode=json&units=metric
 
-        String pageNumberParam = "1";
-        String perPageParam = "2";
+        String perPageParam = "50";
 
         target = client.target(
                 "http://csob-hackathon.herokuapp.com:80/api/v1/traffic.json")
-                .queryParam("page", pageNumberParam)
                 .queryParam("per_page", perPageParam);
     }
 
-    public TrafficResponse getTrafficResponse() {
-        return target.request(MediaType.APPLICATION_JSON_TYPE)
+    public TrafficResponse getTrafficResponse(String pageNumberParam) {
+        return target.queryParam("page", pageNumberParam)
+                .request(MediaType.APPLICATION_JSON_TYPE)
                 .get(TrafficResponse.class);
     }
 }
