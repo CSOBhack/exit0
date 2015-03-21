@@ -10,6 +10,7 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import cz.csob.chart.DonutChart;
 import cz.csob.gmap.GoogleMapCmp;
+import cz.csob.rest.ActionsJsonService;
 import cz.csob.rest.ForecastDisplay;
 import cz.csob.rest.JsonService;
 import org.vaadin.maddon.label.Header;
@@ -24,7 +25,7 @@ import javax.servlet.annotation.WebServlet;
 @Widgetset("cz.csob.MyAppWidgetset")
 public class MyUI extends UI {
 
-    JsonService service = new JsonService();
+    ActionsJsonService service = new ActionsJsonService();
     ForecastDisplay display = new ForecastDisplay();
     NativeSelect citySelector = new NativeSelect("Choose city");
 
@@ -42,7 +43,7 @@ public class MyUI extends UI {
             public void valueChange(Property.ValueChangeEvent valueChangeEvent) {
                 // Note, if you rest service may take a while make it "asynchronously"
                 // using e.g. ProgressIndicator
-                display.setForecast(service.getForecast(citySelector.getValue().toString()));
+                display.setForecast(service.getData());
             }
         });
         citySelector.setValue("Turku");

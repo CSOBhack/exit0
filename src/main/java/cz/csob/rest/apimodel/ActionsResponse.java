@@ -1,4 +1,6 @@
-public class Actions
+package cz.csob.rest.apimodel;
+
+public class ActionsResponse
 {
     private String id;
 
