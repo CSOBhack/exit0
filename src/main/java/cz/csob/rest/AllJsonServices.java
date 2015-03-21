@@ -7,6 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 import cz.csob.rest.apimodel.actions.ActionsResponse;
 import cz.csob.rest.apimodel.actors.ActorsResponse;
+import cz.csob.rest.apimodel.actorsimplified.ActorSimplifiedResponse;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.jetty.connector.JettyConnectorProvider;
@@ -38,5 +39,14 @@ public class AllJsonServices {
                 "http://csob-hackathon.herokuapp.com:80/api/v1/actors.json");
         return target.request(MediaType.APPLICATION_JSON_TYPE)
                 .get(ActorsResponse.class);
+    }
+
+    public ActorSimplifiedResponse getActorSimplifiedResponse(int id) {
+        target = client.target(
+                "http://csob-hackathon.herokuapp.com/api/v1/actors/"+id+"/simplified.json");
+        return target.request(MediaType.APPLICATION_JSON_TYPE)
+                .get(ActorSimplifiedResponse.class);
+
+
     }
 }
