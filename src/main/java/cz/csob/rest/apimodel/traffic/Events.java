@@ -6,7 +6,7 @@ public class Events
 
     private String event_id;
 
-    private _embedded _embedded;
+    private cz.csob.rest.apimodel.traffic.inside._embedded _embedded;
 
     public String getHappened_at ()
     {
@@ -28,12 +28,12 @@ public class Events
         this.event_id = event_id;
     }
 
-    public _embedded get_embedded ()
+    public cz.csob.rest.apimodel.traffic.inside._embedded get_embedded ()
     {
         return _embedded;
     }
 
-    public void set_embedded (_embedded _embedded)
+    public void set_embedded (cz.csob.rest.apimodel.traffic.inside._embedded _embedded)
     {
         this._embedded = _embedded;
     }

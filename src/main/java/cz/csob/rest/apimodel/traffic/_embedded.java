@@ -2,69 +2,21 @@ package cz.csob.rest.apimodel.traffic;
 
 public class _embedded
 {
-    private String system;
+    private Events[] events;
 
-    private String node;
-
-    private String layer;
-
-    private Action action;
-
-    private Actor actor;
-
-    public String getSystem ()
+    public Events[] getEvents ()
     {
-        return system;
+        return events;
     }
 
-    public void setSystem (String system)
+    public void setEvents (Events[] events)
     {
-        this.system = system;
-    }
-
-    public String getNode ()
-    {
-        return node;
-    }
-
-    public void setNode (String node)
-    {
-        this.node = node;
-    }
-
-    public String getLayer ()
-    {
-        return layer;
-    }
-
-    public void setLayer (String layer)
-    {
-        this.layer = layer;
-    }
-
-    public Action getAction ()
-    {
-        return action;
-    }
-
-    public void setAction (Action action)
-    {
-        this.action = action;
-    }
-
-    public Actor getActor ()
-    {
-        return actor;
-    }
-
-    public void setActor (Actor actor)
-    {
-        this.actor = actor;
+        this.events = events;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [system = "+system+", node = "+node+", layer = "+layer+", action = "+action+", actor = "+actor+"]";
+        return "ClassPojo [events = "+events+"]";
     }
 }
