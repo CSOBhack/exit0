@@ -3,7 +3,7 @@ package cz.csob.rest.apimodel.traffic.inside;
 import cz.csob.rest.apimodel.traffic.Action;
 import cz.csob.rest.apimodel.traffic.Actor;
 
-public class _embedded
+public class _embeddedInside
 {
     private String system;
 

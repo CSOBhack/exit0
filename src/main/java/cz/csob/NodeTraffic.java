@@ -15,11 +15,14 @@ public class NodeTraffic {
 
     public String getData (String nodeId) {
         String response = "";
-        for (int i = 0; i < service.getTrafficResponse().get_embedded().getEvents().length; i++) {
-            Events event = service.getTrafficResponse().get_embedded().getEvents()[i];
-            if (nodeId == event.get_embedded().getNode()) {
-                System.out.println(response);
-                response += event.toString();
+        int id=1;
+        for (int i = 0; i < service.getTrafficResponse(id).get_embedded().getEvents().length; i++) {
+            Events event = service.getTrafficResponse(id).get_embedded().getEvents()[i];
+            if (event != null && event.get_embeddedInside() != null && nodeId != null) {
+                if (nodeId == event.get_embeddedInside().getNode()) {
+                    System.out.println(response);
+                    response += event.toString();
+                }
             }
         }
         return response;

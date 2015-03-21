@@ -10,6 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import cz.csob.chart.DonutChart;
 import cz.csob.gmap.GoogleMapCmp;
 import cz.csob.rest.AllJsonServices;
+import cz.csob.rest.TrafficJsonService;
 import cz.csob.tomas.hracicka.TomikuvTab;
 
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +30,9 @@ public class MyUI extends UI {
         layout.setMargin(true);
         setContent(layout);
 
+        // load traffic data
+        NodeTraffic nodeTraffic = new NodeTraffic(new TrafficJsonService());
+        nodeTraffic.getData("1");
 
         // vaadin demo
         Button button = new Button("Click Me");
