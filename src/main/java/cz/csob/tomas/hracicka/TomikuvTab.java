@@ -2,6 +2,7 @@ package cz.csob.tomas.hracicka;
 
 import cz.csob.rest.AllJsonServices;
 import org.vaadin.maddon.label.Header;
+import org.vaadin.maddon.layouts.MHorizontalLayout;
 import org.vaadin.maddon.layouts.MVerticalLayout;
 
 /**
@@ -18,7 +19,9 @@ public class TomikuvTab {
     public MVerticalLayout getTomikuvTab() {
         return new MVerticalLayout(
                 new Header("Tomas Hracicka"),
-                new TomasActionsTable(service.getActions().get_embedded().getActions()));
+                new MHorizontalLayout(
+                        TomasActionsTable.getActionsTable(service.getActions().get_embedded().getActions()),
+                        TomasActionsChart.getActionsChart(service.getActions().get_embedded().getActions())));
     }
 
 
