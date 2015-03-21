@@ -2,57 +2,35 @@ package cz.csob.rest.apimodel;
 
 public class ActionsResponse
 {
-    private String id;
+    private _links _links;
 
-    private String price;
+    private _embedded _embedded;
 
-    private String name;
-
-    private String power;
-
-    public String getId ()
+    public _links get_links ()
     {
-        return id;
+        return _links;
     }
 
-    public void setId (String id)
+    public void set_links (_links _links)
     {
-        this.id = id;
+        this._links = _links;
     }
 
-    public String getPrice ()
+    public _embedded get_embedded ()
     {
-        return price;
+        return _embedded;
     }
 
-    public void setPrice (String price)
+    public void set_embedded (_embedded _embedded)
     {
-        this.price = price;
-    }
-
-    public String getName ()
-    {
-        return name;
-    }
-
-    public void setName (String name)
-    {
-        this.name = name;
-    }
-
-    public String getPower ()
-    {
-        return power;
-    }
-
-    public void setPower (String power)
-    {
-        this.power = power;
+        this._embedded = _embedded;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", price = "+price+", name = "+name+", power = "+power+"]";
+        return "ClassPojo [_links = "+_links+", _embedded = "+_embedded+"]";
     }
 }
+			
+	

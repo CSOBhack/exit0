@@ -13,12 +13,12 @@ import org.glassfish.jersey.jetty.connector.JettyConnectorProvider;
 
 /**
  */
-public class ActionsJsonService {
+public class AllJsonServices {
 
     private Client client;
     private WebTarget target;
 
-    public ActionsJsonService() {
+    public AllJsonServices() {
         ClientConfig cc = new ClientConfig();
         cc.connectorProvider(new JettyConnectorProvider());
         cc.register(new LoggingFilter());
@@ -28,7 +28,7 @@ public class ActionsJsonService {
                 "http://csob-hackathon.herokuapp.com:80/api/v1/actions.json");
     }
 
-    public ActionsResponse getData() {
+    public ActionsResponse getActions() {
         return target.request(MediaType.APPLICATION_JSON_TYPE)
                 .get(ActionsResponse.class);
     }
