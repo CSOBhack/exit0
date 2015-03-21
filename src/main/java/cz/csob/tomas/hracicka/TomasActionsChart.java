@@ -47,6 +47,11 @@ public class TomasActionsChart {
         }
         xaxis.setCategories(categories.toArray(new String[categories.size()]));
 
+        Labels labels = new Labels();
+        labels.setRotation(-45);
+        labels.setAlign(HorizontalAlign.RIGHT);
+        xaxis.setLabels(labels);
+
         conf.addSeries(seriesPower);
         conf.addSeries(seriesPrice);
         conf.addxAxis(xaxis);

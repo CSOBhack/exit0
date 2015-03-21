@@ -44,7 +44,7 @@ public class GoogleMapCmp extends VerticalLayout {
             System.out.println(position);
             GoogleMapMarker nodeMarker = new GoogleMapMarker(
                     node.getVenue_name(), position,
-                    false, "https://lh3.googleusercontent.com/vl_1-_L0NJjIpJYcQslvxEyAC_KK8_FiRua7wsMvuPTWRVphdz__z6dMe3IuraDfQsaBtQVthszF2RI=w1794-h862");
+                    false, null);
             nodeMarker.setAnimationEnabled(true);
             googleMap.addMarker(nodeMarker);
 
