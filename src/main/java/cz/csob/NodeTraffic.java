@@ -15,8 +15,9 @@ public class NodeTraffic {
 
     public String getData (String nodeId) {
         String response = "";
-        for (int i = 0; i < service.getTrafficResponse().get_embedded().getEvents().length; i++) {
-            Events event = service.getTrafficResponse().get_embedded().getEvents()[i];
+        int id=1;
+        for (int i = 0; i < service.getTrafficResponse(id).get_embedded().getEvents().length; i++) {
+            Events event = service.getTrafficResponse(id).get_embedded().getEvents()[i];
             if (nodeId == event.get_embeddedInside().getNode()) {
                 System.out.println(response);
                 response += event.toString();
