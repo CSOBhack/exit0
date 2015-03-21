@@ -1,0 +1,8 @@
+You can change your (maven_folder)/bin/mvn.bat ( or sh) and put the line you
+mentioned.
+
+
+set MAVEN_OPTS="%MAVEN_OPTS% -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n" 
+
+Then add Debug configuration as remote debugging at port 4000
+
