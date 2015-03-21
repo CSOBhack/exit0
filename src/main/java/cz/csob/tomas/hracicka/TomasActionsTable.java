@@ -2,7 +2,8 @@ package cz.csob.tomas.hracicka;
 
 import com.vaadin.data.Item;
 import com.vaadin.ui.Table;
-import cz.csob.rest.apimodel.Actions;
+import cz.csob.rest.apimodel.actions.Actions;
+
 
 /**
  * Created by Valovi on 21.3.2015.
@@ -10,9 +11,9 @@ import cz.csob.rest.apimodel.Actions;
 public class TomasActionsTable extends Table {
 
     private static String ID = "ID";
-    private static  String PRICE = "PRICE";
-    private static  String NAME = "NAME";
-    private static  String POWER = "POWER";
+    private static String PRICE = "PRICE";
+    private static String NAME = "NAME";
+    private static String POWER = "POWER";
 
     public TomasActionsTable(Actions actions[]) {
 
