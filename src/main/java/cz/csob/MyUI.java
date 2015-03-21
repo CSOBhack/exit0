@@ -12,8 +12,9 @@ import cz.csob.chart.DonutChart;
 import cz.csob.gmap.GoogleMapCmp;
 import cz.csob.rest.AllJsonServices;
 import cz.csob.rest.ForecastDisplay;
-import cz.csob.rest.apimodel.actions.ActionsResponse;
+import cz.csob.rest.TrafficJsonService;
 import cz.csob.rest.apimodel.actors.ActorsResponse;
+import cz.csob.rest.apimodel.traffic.TrafficResponse;
 import org.vaadin.maddon.label.Header;
 import org.vaadin.maddon.layouts.MVerticalLayout;
 
@@ -28,6 +29,7 @@ import java.util.Arrays;
 public class MyUI extends UI {
 
     AllJsonServices service = new AllJsonServices();
+    TrafficJsonService serviceTraffic = new TrafficJsonService();
     ForecastDisplay display = new ForecastDisplay();
     NativeSelect citySelector = new NativeSelect("Choose city");
 
@@ -47,11 +49,14 @@ public class MyUI extends UI {
                 // using e.g. ProgressIndicator
                 //ActionsResponse actions = service.getActions();
                 ActorsResponse actors = service.getActors();
+                TrafficResponse traffic = serviceTraffic.getTrafficResponse();
                 System.out.println(Arrays.asList(actors.get_embedded().getActors()));
-                String actionIdJustForTest = Arrays.asList(actors.get_embedded().getActors()).get(0).getId();
+                //String actionIdJustForTest = Arrays.asList(actions.get_embedded().getActors()).get(0).getId();
                 String actionTypeJustForTest = Arrays.asList(actors.get_embedded().getActors()).get(0).getType();
-                System.out.println("Actions.0.id=" + actionIdJustForTest);
+                String trafficTypeJustForTest = traffic.get_embedded().toString();
+                System.out.println("traffic.all.string=" + trafficTypeJustForTest);
                 System.out.println("Actions.0.type=" + actionTypeJustForTest);
+                System.out.println("Traffic.0.type=" + trafficTypeJustForTest);
                 //display.setForecast(actionIdJustForTest);
 
             }
