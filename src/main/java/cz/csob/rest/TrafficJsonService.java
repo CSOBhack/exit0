@@ -31,8 +31,8 @@ public class TrafficJsonService {
                 .queryParam("per_page", perPageParam);
     }
 
-    public TrafficResponse getTrafficResponse(String pageNumberParam) {
-        return target.queryParam("page", pageNumberParam)
+    public TrafficResponse getTrafficResponse(int pageNumberParam) {
+        return target.queryParam("page", Integer.toString(pageNumberParam))
                 .request(MediaType.APPLICATION_JSON_TYPE)
                 .get(TrafficResponse.class);
     }
