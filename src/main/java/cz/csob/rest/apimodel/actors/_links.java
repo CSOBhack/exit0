@@ -1,5 +1,5 @@
-package cz.csob.rest.apimodel;
-
+package cz.csob.rest.apimodel.actors;
+               
 public class _links
 {
     private Self self;
@@ -20,3 +20,4 @@ public class _links
         return "ClassPojo [self = "+self+"]";
     }
 }
+	

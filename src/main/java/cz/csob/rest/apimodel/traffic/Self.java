@@ -1,4 +1,4 @@
-package cz.csob.rest.apimodel;
+package cz.csob.rest.apimodel.traffic;
 
 public class Self
 {

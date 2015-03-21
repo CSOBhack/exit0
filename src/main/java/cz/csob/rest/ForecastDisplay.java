@@ -1,14 +1,6 @@
 package cz.csob.rest;
 
-import java.util.Calendar;
-import java.util.Date;
-
-import com.vaadin.ui.VerticalLayout;
-import cz.csob.rest.apimodel.ActionsResponse;
-import cz.csob.rest.model.Forecast;
-import cz.csob.rest.model.ForecastResponse;
-import org.vaadin.maddon.label.Header;
-import org.vaadin.maddon.label.RichText;
+import cz.csob.rest.apimodel.actions.ActionsResponse;
 import org.vaadin.maddon.layouts.MVerticalLayout;
 
 /**
