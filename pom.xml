@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
     <groupId>cz.csob</groupId>
     <artifactId>hackaton</artifactId>
     <packaging>war</packaging>
@@ -211,7 +212,7 @@
                 </configuration>
             </plugin>
 
-            <!-- The Jetty plugin allows us to easily test the development build by
+            <!-- The Jetty plugin allows us to easily hracicka the development build by
                 running jetty:run on the command line. -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
