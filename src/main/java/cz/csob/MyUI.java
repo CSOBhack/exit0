@@ -13,6 +13,7 @@ import cz.csob.gmap.GoogleMapCmp;
 import cz.csob.rest.AllJsonServices;
 import cz.csob.rest.ForecastDisplay;
 import cz.csob.rest.apimodel.actions.ActionsResponse;
+import cz.csob.rest.apimodel.actors.ActorsResponse;
 import org.vaadin.maddon.label.Header;
 import org.vaadin.maddon.layouts.MVerticalLayout;
 
@@ -44,9 +45,13 @@ public class MyUI extends UI {
             public void valueChange(Property.ValueChangeEvent valueChangeEvent) {
                 // Note, if you rest service may take a while make it "asynchronously"
                 // using e.g. ProgressIndicator
-                ActionsResponse actions = service.getActions();
-                String actionIdJustForTest = Arrays.asList(actions.get_embedded().getActions()).get(0).getId();
+                //ActionsResponse actions = service.getActions();
+                ActorsResponse actors = service.getActors();
+                System.out.println(Arrays.asList(actors.get_embedded().getActors()));
+                String actionIdJustForTest = Arrays.asList(actors.get_embedded().getActors()).get(0).getId();
+                String actionTypeJustForTest = Arrays.asList(actors.get_embedded().getActors()).get(0).getType();
                 System.out.println("Actions.0.id=" + actionIdJustForTest);
+                System.out.println("Actions.0.type=" + actionTypeJustForTest);
                 //display.setForecast(actionIdJustForTest);
 
             }
