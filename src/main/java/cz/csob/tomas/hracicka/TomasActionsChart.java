@@ -1,10 +1,7 @@
 package cz.csob.tomas.hracicka;
 
 import com.vaadin.addon.charts.Chart;
-import com.vaadin.addon.charts.model.ChartType;
-import com.vaadin.addon.charts.model.Configuration;
-import com.vaadin.addon.charts.model.ListSeries;
-import com.vaadin.addon.charts.model.XAxis;
+import com.vaadin.addon.charts.model.*;
 import cz.csob.rest.apimodel.actions.Actions;
 
 import java.util.ArrayList;
@@ -16,20 +13,26 @@ import java.util.List;
  */
 public class TomasActionsChart {
 
-    private static String ID = "ID";
-    private static String PRICE = "PRICE";
-    private static String NAME = "NAME";
-    private static String POWER = "POWER";
-
     public static Chart getActionsChart(Actions actions[]) {
 
         Chart chart = new Chart(ChartType.COLUMN);
-        //chart.setWidth("1000px");  // 100% by default
+        chart.setWidth("1000px");  // 100% by default
         chart.setHeight("900px"); // 400px by default
 
         Configuration conf = chart.getConfiguration();
         conf.setTitle("Tomikuv prvni grafik");
         conf.setSubTitle("Actions");
+
+        Legend legend = new Legend();
+        legend.setLayout(LayoutDirection.VERTICAL);
+        legend.setBackgroundColor("#FFFFFF");
+        legend.setHorizontalAlign(HorizontalAlign.LEFT);
+        legend.setVerticalAlign(VerticalAlign.TOP);
+        legend.setX(100);
+        legend.setY(70);
+        legend.setFloating(true);
+        legend.setShadow(true);
+        conf.setLegend(legend);
 
         ListSeries seriesPower = new ListSeries("Power");
         ListSeries seriesPrice = new ListSeries("Price");
