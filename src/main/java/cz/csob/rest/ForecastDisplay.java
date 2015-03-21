@@ -25,8 +25,8 @@ public class ForecastDisplay extends MVerticalLayout {
 
     public void setForecast(ActionsResponse fr) {
         removeAllComponents();
+        /*
         addComponent(new Header(String.format(mainTemplate,
-                fr.getId(),
                 fr.getPower())));
         /*
         removeAllComponents();
